@@ -1,13 +1,15 @@
 import './App.css';
 import * as React from 'react';
+import {useState} from "react";
+
 import Grid from '@mui/material/Unstable_Grid2'; // Grid version 2
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import MenuItem from '@mui/material/MenuItem';
 import Button from '@mui/material/Button';
-import {useState} from "react";
-import convertPolarFormat from "./convertPolar";
 import {Link} from "@mui/material";
+
+import convertPolarFormat from "./convertPolar";
 
 const conversionTypes = [
     {
@@ -22,24 +24,9 @@ const conversionTypes = [
 
 function App() {
 
-    const [conversionType, setConversionType] = useState('ORC-EXP');
-    const handleConversionType = (event) => {
-        setConversionType(event.target.value);
-    };
-
+  const [conversionType, setConversionType] = useState(conversionTypes[0].value);
   const [sourcePolarText, setSourcePolarText] = useState('');
-  const handleSourcePolarTextChange = (event) => {
-      setSourcePolarText(event.target.value);
-  };
-
   const [convertedPolarText, setConvertedPolarText] = useState('');
-
-
-  function doConversion() {
-      let newPolar = convertPolarFormat(conversionType, sourcePolarText)
-      setConvertedPolarText(newPolar)
-      console.log('Converting ' + newPolar)
-  }
 
   return (
     <div className="App">
@@ -47,25 +34,35 @@ function App() {
             component="form"
             noValidate
             autoComplete="off"
+            m={2}
         >
             <Grid container spacing={2}>
                 <Grid xs={12}>
-                    <TextField id="source-polar" label="Paste polar file here"
+                    <TextField id="source-polar" label="Paste content of polar file here"
                                multiline
                                fullWidth
                                maxRows={15}
                                value = {sourcePolarText}
-                               onChange={handleSourcePolarTextChange}
+                               onChange={(event) => {
+                                   setSourcePolarText(event.target.value);
+                               }}
                     />
                 </Grid>
-                <Grid xs={6}>
+                <Grid xs={4}>
+                </Grid>
+                <Grid xs={2} container
+                      direction="row"
+                      justifyContent="center"
+                      alignItems="center">
+
                     <TextField
                         id="select-conversion"
                         select
-                        label="Select"
+                        label="Select conversion"
                         defaultValue={conversionType}
-                        helperText="Select conversion"
-                        onChange={handleConversionType}
+                        onChange={(event) => {
+                            setConversionType(event.target.value);
+                        }}
                     >
                         {conversionTypes.map((option) => (
                             <MenuItem key={option.value} value={option.value}>
@@ -75,8 +72,15 @@ function App() {
 
                     </TextField>
                 </Grid>
-                <Grid xs={6}>
-                    <Button variant="contained" onClick={doConversion}>Convert</Button>
+                <Grid xs={2} container
+                      direction="row"
+                      justifyContent="center"
+                      alignItems="center">
+                    <Button variant="contained" onClick={
+                        () => setConvertedPolarText( convertPolarFormat(conversionType, sourcePolarText) )
+                    }>Convert</Button>
+                </Grid>
+                <Grid xs={4}>
                 </Grid>
                 <Grid xs={12}>
                     <TextField id="converted-polar" label="Converted polar file"
@@ -87,7 +91,7 @@ function App() {
                     />
                 </Grid>
                 <Grid xs={12}>
-                    <Link href="https://github.com/sergei/polarconverter">https://github.com/sergei/polarconverter</Link>
+                    <Link href="https://github.com/sergei/polarconverter">Copyright (c) https://github.com/sergei/polarconverter</Link>
                 </Grid>
             </Grid>
         </Box>

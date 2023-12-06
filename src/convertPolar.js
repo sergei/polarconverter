@@ -3,6 +3,7 @@
 // twa/tws;4;6;8;10;12;14;16;18;20;22;24;26;28;30
 // 30;1;1;1;1;1;1;1;1;3;4;5;5;5;6
 // 40;3.1;4.4;5.5;6.3;6.8;7.1;7.2;7.3;7.5;7.6;7.7;7.7;7.7;7.8
+// TODO add support of extended format
 function parseOrcPolar(sourcePolarText) {
     const lines = sourcePolarText.split(/\r?\n|\r|\n/g);
 
