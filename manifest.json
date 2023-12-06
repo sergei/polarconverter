@@ -1,21 +1,31 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Polar file converter",
+  "name": "App to convert polar files format",
   "icons": [
     {
-      "src": "favicon.ico",
-      "sizes": "64x64 32x32 24x24 16x16",
+      "src": "icons8-wind-ios-16-16.png",
+      "sizes": "16x16",
       "type": "image/x-icon"
     },
     {
-      "src": "logo192.png",
-      "type": "image/png",
-      "sizes": "192x192"
+      "src": "icons8-wind-ios-16-32.png",
+      "sizes": "32x32",
+      "type": "image/x-icon"
     },
     {
-      "src": "logo512.png",
+      "src": "icons8-wind-ios-16-96.png",
+      "sizes": "96x96",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "icons8-wind-50.png",
       "type": "image/png",
-      "sizes": "512x512"
+      "sizes": "50x50"
+    },
+    {
+      "src": "icons8-wind-100.png",
+      "type": "image/png",
+      "sizes": "100x100"
     }
   ],
   "start_url": ".",

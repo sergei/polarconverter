@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/polarconverter/static/css/main.f855e6bc.css",
-    "main.js": "/polarconverter/static/js/main.492212ac.js",
+    "main.js": "/polarconverter/static/js/main.8361d947.js",
     "static/js/787.b9960eac.chunk.js": "/polarconverter/static/js/787.b9960eac.chunk.js",
     "index.html": "/polarconverter/index.html",
     "main.f855e6bc.css.map": "/polarconverter/static/css/main.f855e6bc.css.map",
-    "main.492212ac.js.map": "/polarconverter/static/js/main.492212ac.js.map",
+    "main.8361d947.js.map": "/polarconverter/static/js/main.8361d947.js.map",
     "787.b9960eac.chunk.js.map": "/polarconverter/static/js/787.b9960eac.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.f855e6bc.css",
-    "static/js/main.492212ac.js"
+    "static/js/main.8361d947.js"
   ]
 }
