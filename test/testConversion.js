@@ -6,6 +6,11 @@ fs.readFile('orc-polar.txt', 'utf8', (err, srcPolar) => {
         console.error(err);
         return;
     }
-    const convertedPolar = convertPolarFormat('ORC-EXP', srcPolar)
+    let convertedPolar = convertPolarFormat('ORC-EXP', srcPolar)
+    console.log('ORC-EXP')
+    console.log(convertedPolar);
+
+    convertedPolar = convertPolarFormat('ORC-H5000', srcPolar)
+    console.log('ORC-H5000')
     console.log(convertedPolar);
 });

@@ -7,6 +7,7 @@ import MenuItem from '@mui/material/MenuItem';
 import Button from '@mui/material/Button';
 import {useState} from "react";
 import convertPolarFormat from "./convertPolar";
+import {Link} from "@mui/material";
 
 const conversionTypes = [
     {
@@ -14,12 +15,8 @@ const conversionTypes = [
         label: 'ORC to Expedition',
     },
     {
-        value: 'EXP-ORC',
-        label: 'Expedition to ORC',
-    },
-    {
-        value: 'EXP-H5000',
-        label: 'Expedition to B&G H5000',
+        value: 'ORC-H5000',
+        label: 'ORC to B&G H5000',
     },
 ];
 
@@ -88,6 +85,9 @@ function App() {
                                fullWidth
                                value = {convertedPolarText}
                     />
+                </Grid>
+                <Grid xs={12}>
+                    <Link href="https://github.com/sergei/polarconverter">https://github.com/sergei/polarconverter</Link>
                 </Grid>
             </Grid>
         </Box>
